@@ -1,4 +1,5 @@
-public class MinhaClasse {
+package edu.Italo.anatomiaDasClasses;
+public class Aula4 {
     //identação - facilitar leitura e visualização.
 
     public static void main(String[] args) {
