@@ -1,15 +1,14 @@
 public class MinhaClasse {
-    //declarando métodos - retorno nome Paramentro(s){}
-    public static void main(String [] args){
-        String primeiroNome = "Italo";
-        String segundoNome = "Rocha";
+    //identação - facilitar leitura e visualização.
 
-        String nomeCompleto = nomeCompleto(primeiroNome, segundoNome);
-
-        System.out.print(nomeCompleto);
-    }
-
-    public static String nomeCompleto (String primeiroNome, String segundoNome){
-        return primeiroNome.concat(" ").concat(segundoNome);
+    public static void main(String[] args) {
+        int mediaFinal = 6;
+        if(mediaFinal<6){
+            System.out.println("Reprovado");
+        } else if(mediaFinal==6){
+             System.out.println("média");
+        } else {
+            System.out.println("Aprovado");
+        }
     }
 }
