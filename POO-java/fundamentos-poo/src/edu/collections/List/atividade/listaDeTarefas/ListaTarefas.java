@@ -1,4 +1,4 @@
-package edu.collections.List.atividadeListaDeTarefas;
+package edu.collections.List.atividade.atividadeListaDeTarefas;
 
 import java.util.ArrayList;
 import java.util.List;
