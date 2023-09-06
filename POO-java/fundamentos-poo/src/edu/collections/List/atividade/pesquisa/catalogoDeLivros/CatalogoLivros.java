@@ -19,10 +19,12 @@ public class CatalogoLivros {
     public void pesquisarPorAutor(String autor){
         List<String> resultadoDaPesquisa = new ArrayList<>();
 
-        for (Livro livro : conjuntoDelivros) {
-            if(livro.getAutor().equalsIgnoreCase(autor)){
-                resultadoDaPesquisa.add(livro.getTitulo());
-            }
+        if(!conjuntoDelivros.isEmpty()){
+             for (Livro livro : conjuntoDelivros) {
+                if(livro.getAutor().equalsIgnoreCase(autor)){
+                    resultadoDaPesquisa.add(livro.getTitulo());
+                }
+        }
         }
 
         System.out.println("Livros encontrados com o nome desse autor: " + resultadoDaPesquisa);
@@ -31,9 +33,11 @@ public class CatalogoLivros {
     public void pesquisarPorIntervaloAnos(int anoInicial, int anoFinal){
         List<Livro> resultadoDaPesquisa = new ArrayList<>();
 
-        for (Livro livro : conjuntoDelivros) {
-            if(livro.getAnoPublicacao() > anoInicial && livro.getAnoPublicacao() < anoFinal){
-                resultadoDaPesquisa.add(livro);
+        if(!conjuntoDelivros.isEmpty()){
+            for (Livro livro : conjuntoDelivros) {
+                if(livro.getAnoPublicacao() >= anoInicial && livro.getAnoPublicacao() <= anoFinal){
+                    resultadoDaPesquisa.add(livro);
+                }
             }
         }
 
@@ -42,11 +46,14 @@ public class CatalogoLivros {
     }
 
     public void pesquisarPorTitulo(String titulo){
-        List<Livro> resultadoDaPesquisa = new ArrayList<>();
+        Livro resultadoDaPesquisa = null;
 
-        for (Livro livro : conjuntoDelivros) {
-            if(livro.getTitulo().equalsIgnoreCase(titulo)){
-                resultadoDaPesquisa.add(livro);
+        if(!conjuntoDelivros.isEmpty()){
+            for (Livro livro : conjuntoDelivros) {
+                if(livro.getTitulo().equalsIgnoreCase(titulo)){
+                    resultadoDaPesquisa = livro;
+                    break;
+                }
             }
         }
 
@@ -65,7 +72,7 @@ public class CatalogoLivros {
 
         catalogo.pesquisarPorAutor("George Orwell");
 
-        catalogo.pesquisarPorIntervaloAnos(1944, 2013);
+        catalogo.pesquisarPorIntervaloAnos(1945, 2014);
 
         catalogo.pesquisarPorTitulo("A Revolução dos bichos");
     }
