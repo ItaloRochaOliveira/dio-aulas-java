@@ -1,4 +1,4 @@
-package edu.collections.List.atividade.listaDeTarefas;
+package edu.collections.List.atividade.operacoesBasicas.listaDeTarefas;
 
 public class Tarefa {
     private String descricao;
