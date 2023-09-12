@@ -1,4 +1,4 @@
-package edu.collections.Set.atividade.operacoesBasicas.pesquisa.agendaDeContatos;
+package edu.collections.Set.atividade.pesquisa.agendaDeContatos;
 
 import java.util.Objects;
 
