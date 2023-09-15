@@ -3,7 +3,6 @@ package edu.StreamAPI.atividade;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -19,6 +18,8 @@ public class Main{
         desafio3(numeros);
 
         desafio4(numeros);
+
+        desafio5(numeros);
     }
 
     //Desafio 1 - Mostre a lista na ordem numérica:
@@ -60,16 +61,16 @@ public class Main{
 
     //Desafio 5 - Calcule a média dos números maiores que 5:
     public static void desafio5(List<Integer> numeros){
-        // Predicate<Integer> numerosMaioresCincoPredicate = numero -> numero >= 5;
+        Predicate<Integer> numerosMaioresCincoPredicate = numero -> numero >= 5;
 
-        // BinaryOperator<Integer> mediaBinary = (num1, num2) -> num1 + num2;  
+        BinaryOperator<Integer> mediaBinary = (num1, num2) -> num1 + num2;  
 
-        // List<Integer> numerosMaioresCinco = numeros.stream().filter(numerosMaioresCincoPredicate).toList();
+        List<Integer> numerosMaioresCinco = numeros.stream().filter(numerosMaioresCincoPredicate).toList();
 
-        // Optional<Integer> soma = numeros.stream().filter(numerosMaioresCincoPredicate).reduce(mediaBinary);
+        int soma = numeros.stream().filter(numerosMaioresCincoPredicate).reduce(0, mediaBinary);
 
-        // int media = soma / numerosMaioresCinco.size();
-
-        // System.out.println(media);
+        int media = soma / numerosMaioresCinco.size();
+        
+        System.out.println(media);
     }
 }
