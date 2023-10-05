@@ -1,6 +1,7 @@
-package one.JUnit;
+package one.JUnit.assertions;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Pessoa{
     private String nome;
@@ -21,6 +22,10 @@ public class Pessoa{
     }
 
     public int getIdade(){
-        return LocalDate.now() - this.nascimento;
+        return (int) ChronoUnit.YEARS.between(this.nascimento, LocalDate.now());
+    }
+
+    public boolean eMaiorIdade(){
+        return getIdade() >= 18;
     }
 }
