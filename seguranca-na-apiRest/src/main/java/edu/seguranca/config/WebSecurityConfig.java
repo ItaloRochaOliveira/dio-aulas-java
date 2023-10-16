@@ -8,23 +8,19 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.DefaultSecurityFilterChain;
-import org.springframework.security.web.SecurityFilterChain;
 
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
     @Autowired
-    public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(securityService).passwordEncoder(NoOpPasswordEncoder.getInstance());
-    }@Autowired
     private SecurityDatabaseService securityService;
+    @Autowired
+    public void globalUserDetails
+    (AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(securityService);
+    }
 
 
     @Bean
@@ -39,7 +35,6 @@ public class WebSecurityConfig {
                         .requestMatchers( "/users").hasAnyRole("USER, MANEGERS")
                         .anyRequest().authenticated()
                 )
-                .httpBasic(null)
                 .build();
     }
 
