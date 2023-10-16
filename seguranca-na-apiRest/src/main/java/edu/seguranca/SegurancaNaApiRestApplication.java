@@ -7,6 +7,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SegurancaNaApiRestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SegurancaNaApiRestApplication.class, args);
-	}
-
+	} 
 }
